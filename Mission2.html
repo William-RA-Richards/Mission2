@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will's League Stats</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Mission2.css" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <header id="sticky">
+      <div id="nav-bar">
+        <h1>
+          <img
+            class="img"
+            alt="League of Legends Logo"
+            src="https://pentagram-production.imgix.net/cc7fa9e7-bf44-4438-a132-6df2b9664660/EMO_LOL_02.jpg?rect=0%2C0%2C1440%2C1512&w=1440&fm=jpg&q=70&auto=format"
+          />Will's League Stats
+        </h1>
+        <nav>
+          <ul>
+            <li class="btn nav-link">
+              <a style="color: white" href="Mission2.html">Home</a>
+            </li>
+            <li class="btn nav-link">
+              <a style="color: white" href="#Email-Section">Email Me</a>
+            </li>
+            <li class="btn nav-link">
+              <a style="color: white" href="#Champion-Select"
+                >Champion Select</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="first-img">
+      <b><h2 id="welcome">Welcome!</h2></b>
+      <img
+        id="main-img"
+        src="https://cdn1.epicgames.com/offer/24b9b5e323bc40eea252a10cdd3b2f10/EGS_LeagueofLegends_RiotGames_S1_2560x1440-80471666c140f790f28dff68d72c384b"
+      />
+    </div>
+
+    <main>
+      <div class="flex">
+        <section id="left">
+          <div class="general-info">
+            <h1>General Overview</h1>
+            <p>
+              Here is a general overview of my matches. Not particularly good,
+              nor bad this split.
+            </p>
+            <ul>
+              <li>Number of Games: 238</li>
+              <li>120 Wins - 118 Losses</li>
+            </ul>
+            <h2>Roles Win Rate</h2>
+            <ul>
+              <li>Top: <span class="ok">40.0%</span></li>
+              <li>Jungle: <span class="good">52.2%</span></li>
+              <li>Mid: <span class="good">53.5%</span></li>
+              <li>Bottom: <span class="bad">41.4%</span></li>
+              <li>Support: <span class="good">56.1%</span></li>
+            </ul>
+            <br />
+          </div>
+
+          <div class="filter">
+            <form>
+              <fieldset>
+                <h1>Filter</h1>
+                <label>Search Name: </label>
+                <input id="search-input" type="text" /><br />
+                <input id="top-checkbox" type="checkbox" />
+                <label>Top Lane</label><br />
+                <input id="jungle-checkbox" type="checkbox" />
+                <label>Jungle</label><br />
+                <input id="mid-checkbox" type="checkbox" />
+                <label>Mid Lane</label><br />
+                <input id="bottom-checkbox" type="checkbox" />
+                <label>Bottom Lane</label><br />
+                <input id="support-checkbox" type="checkbox" />
+                <label>Support</label><br />
+                <label>Win Rate: </label>
+                <input id="win-rate-input" type="number" /><br />
+                <label>KDA: </label>
+                <input id="kda-input" type="number" /><br />
+                <label>Games Played: </label>
+                <input id="games-played-input" type="number" /><br />
+                <button id="filter-btn">Filter Champions!</button>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+        <section id="right">
+          <a id="Champion-Select"><span></span></a>
+          <h1>Champion Select</h1>
+        </section>
+      </div>
+
+      <div id="Email-Section" class="contact-form">
+        <fieldset>
+          <legend>Contact Me</legend>
+          <a id="Email-Section"
+            ><h1>Send an Email!</h1>
+            <br
+          /></a>
+          <p>Let me know if you have any suggestions at my email here!</p>
+          <form action="mailto:williamr@missionreadyhq.com" method="post">
+            <!-- Name Field -->
+            <label>Name: </label><br />
+            <input
+              type="text"
+              name="name"
+              placeholder="Flint Lockwood"
+              required
+            />
+            <br />
+
+            <!-- Email Field -->
+            <label>Email: </label><br />
+            <input
+              type="email"
+              name="email"
+              placeholder="someone@example.com"
+              required
+            />
+            <br />
+
+            <!-- Subject Radio Field -->
+            <label>Subject: </label><br />
+            <!-- Radio 1 -->
+            <input
+              type="radio"
+              name="subject"
+              value="chanpionSuggestion"
+            /><label>Chanpion Suggestion</label>
+            <!-- Radio 2 -->
+            <input type="radio" name="subject" value="tipsnTricks" /><label
+              >Tips & Tricks</label
+            >
+            <!-- Radio 3 -->
+            <input type="radio" name="subject" value="others" /><label
+              >Others</label
+            >
+            <br /><br />
+
+            <!-- Message Text Area -->
+            <label>Message: </label><br />
+            <textarea
+              name="message"
+              placeholder="Hello, are you there?"
+            ></textarea>
+            <br /><br />
+
+            <!-- Submit Button -->
+            <input type="submit" value="submit" />
+          </form>
+        </fieldset>
+      </div>
+    </main>
+
+    <footer>
+      TM & Copyrights 2024 Riot Games, Inc, League of Legends and all related
+      logos, characters, names and distinctive likenesses thereof are exclusive
+      property of Riot Games, Inc. All Rights Reserved.
+    </footer>
+  </body>
+</html>

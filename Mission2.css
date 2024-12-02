@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: arial;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Style the Navbar */
+nav > ul {
+  display: flex;
+  margin: 10px 5px;
+}
+
+fieldset {
+  background-color: black;
+  border: 3px solid gold;
+  color: gold;
+}
+
+a {
+  color: gold;
+  text-decoration: none;
+}
+
+header {
+  background-color: #0a1620;
+  border: solid 2px gold;
+}
+
+body {
+  background-color: #0a1620;
+  margin: 0;
+}
+
+textarea {
+  background-color: #141414;
+  border-color: #0b112c;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="checkbox"] {
+  padding: 2px 2px;
+  margin: 8px 0px;
+  border: none;
+  border-bottom: 2px solid #0a1620;
+  background-color: #141414;
+  color: gold;
+}
+
+input[type="radio"] {
+  width: 20px;
+  background-color: #0a1620;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  background-color: #0a1620;
+  color: gold;
+  border-color: gold;
+  width: 90%;
+  cursor: pointer;
+}
+
+h1 {
+  color: gold;
+  font-size: 40px;
+  bottom: 0;
+}
+
+section > h2 {
+  color: grey;
+}
+
+ul {
+  list-style: none;
+}
+
+footer {
+  background-color: rgb(76, 138, 253);
+  color: black;
+}
+
+#first-img {
+  position: relative;
+}
+
+#welcome {
+  color: goldenrod;
+  font-size: 11em;
+  position: absolute;
+  top: 5vh;
+  left: 30vw;
+  z-index: 2;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#sticky {
+  top: 0;
+  left: 0;
+  position: sticky;
+  align-self: flex-start;
+  z-index: 3;
+}
+
+/* The Left side of the main element */
+#left {
+  width: 25%;
+  text-align: center;
+}
+
+/* The Right side of the main element */
+#right {
+  width: 75%;
+  text-align: center;
+  position: relative;
+}
+
+#main-img {
+  width: 100%;
+  margin: 50px 0px;
+}
+
+#Champion-Select {
+  position: absolute;
+  top: -15%;
+}
+
+.general-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  gap: 20px;
+  color: white;
+  border: solid 2px gold;
+  font-size: 20px;
+  background-color: #141414;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: black;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  border: 2px solid gold;
+}
+
+.nav-link {
+  list-style: none;
+  margin: 2px 5px;
+  padding: 8px 15px;
+}
+
+.nav-link:hover {
+  background-color: #143988;
+  color: white;
+  cursor: pointer;
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px 0px;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+}
+
+.content-container {
+  margin: 10px 0px;
+}
+
+.position-img {
+  width: 3vw;
+}
+
+.champ-img {
+  width: 7vw;
+  height: 7vw;
+  margin: 0px 5px;
+  border: solid 2px goldenrod;
+}
+
+.good {
+  color: #00ff0d;
+}
+
+.ok {
+  color: orange;
+}
+
+.bad {
+  color: #ff0000;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1700px) {
+  #welcome {
+    font-size: 7em;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #welcome {
+    font-size: 5em;
+  }
+}
+
+@media screen and (max-width: 918px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  #nav-bar {
+    flex-direction: column;
+  }
+
+  #welcome {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 518px) {
+  nav > ul {
+    flex-direction: column;
+  }
+
+  #welcome {
+    font-size: 2em;
+  }
+}
+
+.img-container {
+  position: relative;
+}
+
+.description {
+  color: white;
+  list-style: none;
+}
+
+@keyframes text-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Centering text on an image and fading text in*/
+.champ-name {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+}
+
+.champ-img:hover + .champ-name {
+  animation-name: text-fade-in;
+  animation-duration: 1s;
+  transition-timing-function: linear;
+  animation-fill-mode: forwards;
+}
