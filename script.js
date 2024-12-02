@@ -1,29 +1,3 @@
-const parents = document.querySelectorAll(".content-container");
-
-const winSpanArray = [];
-
-for (item of parents) {
-  winSpanArray.push(item.children[1].children[0].children[0]);
-}
-
-// winSpanArray.forEach((item) => console.log(item.textContent));
-
-const kdaArray = [];
-
-for (item of parents) {
-  kdaArray.push(item.children[1].children[1]);
-}
-
-// kdaArray.forEach((item) => console.log(item.textContent));
-
-const gamesPlayedArray = [];
-
-for (item of parents) {
-  gamesPlayedArray.push(item.children[1].children[2]);
-}
-
-// gamesPlayedArray.forEach((item) => console.log(item.textContent));
-
 // Elements
 
 const rightEl = document.querySelector("#right");
