@@ -18,12 +18,14 @@ class Champion {
   constructor(name, img, winRate, kda, gamesPlayed, position, textColour = "") {
     this.name = name; // String
     this.img = img; // String
-    this.winRate = winRate; // Array
-    this.kda = kda; // Array
-    this.gamesPlayed = gamesPlayed; // Array
-    this.position = position; //Array
+    this.winRate = winRate; // String
+    this.kda = kda; // String
+    this.gamesPlayed = gamesPlayed; // String
+    this.position = position; //String
     this.textColour = textColour; // String
   }
+
+  // Methods
 
   winRateColour() {
     const winNum = this.winRate;
@@ -42,6 +44,8 @@ class Lane {
     this.lane = lane;
     this.img = img;
   }
+
+  // Methods
 
   display() {
     if (this.name != "Jungle") {
@@ -302,31 +306,7 @@ const championPool = [
   velkoz,
 ];
 
-let currentChampionPool = [
-  mordekaiser,
-  gwen,
-  singed,
-  nunuWillump,
-  lillia,
-  kindred,
-  nocturne,
-  viego,
-  luxMid,
-  syndra,
-  hwei,
-  veigar,
-  ekko,
-  azir,
-  jinx,
-  xayah,
-  missFortune,
-  luxSupport,
-  thresh,
-  yuumi,
-  senna,
-  pantheon,
-  velkoz,
-];
+let currentChampionPool = [...championPool];
 
 const topLane = new Lane(
   "Top",
@@ -354,7 +334,15 @@ const supportLane = new Lane(
 );
 
 const lanes = [topLane, jungleLane, midLane, bottomLane, supportLane];
-let currentLanes = [topLane, jungleLane, midLane, bottomLane, supportLane];
+let currentLanes = [...lanes];
+
+const img1 =
+  "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2021/12/league-of-legends-firelight-ekko-header.jpg";
+
+const img2 = "https://i.redd.it/70034ibiwnpc1.jpeg";
+
+const img3 =
+  "https://www.lolvvv.com/_next/image?url=https%3A%2F%2Fddragon.leagueoflegends.com%2Fcdn%2Fimg%2Fchampion%2Fsplash%2FEkko_46.jpg&w=1200&q=75";
 
 // Functions
 
@@ -375,7 +363,7 @@ function displayChampions() {
             champ.name
           }</h3></div><ul class="description"><li>Win-rate: <span class="${champ.winRateColour()}">${
             champ.winRate
-          }</span></li><li>AVG K/D/A: ${champ.kda}</li><li>Games Played: ${
+          }%</span></li><li>AVG K/D/A: ${champ.kda}</li><li>Games Played: ${
             champ.gamesPlayed
           }</li></ul>`;
         } else {
@@ -385,11 +373,14 @@ function displayChampions() {
             champ.name
           }</h3></div><ul class="description"><li>Win-rate: <span class="${champ.winRateColour()}">${
             champ.winRate
-          }</span></li><li>AVG K/D/A: ${champ.kda}</li><li>Games Played: ${
+          }%</span></li><li>AVG K/D/A: ${champ.kda}</li><li>Games Played: ${
             champ.gamesPlayed
           }</li></ul>`;
         }
       }
+    }
+    if (laneEl.children.length === 0) {
+      laneEl.innerHTML += `<p style="color: white; font-size: 20px">No matches for this lane!</p>`;
     }
   }
 }
@@ -410,10 +401,7 @@ function updateChampions(lanesInput, names, winRate, kda, gamesPlayed) {
   displayChampions();
 }
 
-// Listeners
-
-filterBtnEl.addEventListener("click", (event) => {
-  event.preventDefault();
+function getInput() {
   const lanesArray = [];
   let searchInput;
   let winRateInput;
@@ -471,6 +459,13 @@ filterBtnEl.addEventListener("click", (event) => {
       gamesPlayedInput
     );
   }
+}
+
+// Listeners
+
+filterBtnEl.addEventListener("click", (event) => {
+  event.preventDefault();
+  getInput();
 });
 
 displayChampions();
