@@ -378,9 +378,36 @@ function displayChampions() {
 }
 
 function updateChampions(lanesInput, names, winRate, kda, gamesPlayed) {
+  let regexArray = [];
+  if (typeof names == typeof []) {
+    names.forEach((name) => {
+      regexArray.push(
+        new RegExp(
+          `${name[0].toLowerCase()}|${name[0].toUpperCase()}${name
+            .slice(1)
+            .toLowerCase()}`
+        )
+      );
+    });
+  } else {
+    regexArray.push(
+      new RegExp(
+        `${names[0].toLowerCase()}|${names[0].toUpperCase()}${names
+          .slice(1)
+          .toLowerCase()}`
+      )
+    );
+  }
+
   currentChampionPool = championPool.filter((champ) => {
     const isLane = lanesInput.indexOf(champ.position) != -1;
-    const isName = names.indexOf(champ.name) != -1;
+    console.log(regexArray);
+    const isNameArray = regexArray.map((regex) => {
+      return regex.test(champ.name);
+    });
+    console.log(isNameArray);
+    console.log(isNameArray.indexOf(true));
+    const isName = isNameArray.indexOf(true) != -1;
     const isWin = parseInt(winRate) <= champ.winRate;
     const isKDA = parseFloat(kda) <= champ.kda;
     const isPlayed = parseInt(gamesPlayed) <= champ.gamesPlayed;
