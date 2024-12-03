@@ -339,7 +339,7 @@ let currentLanes = [...lanes];
 // Functions
 
 function displayChampions() {
-  rightEl.innerHTML = "";
+  rightEl.innerHTML = `<a id="Champion-Select"><span></span></a><h1>Champion Select</h1>`;
   for (const lane of currentLanes) {
     lane.display();
     const laneEl = document.getElementById(lane.lane.toLowerCase());
