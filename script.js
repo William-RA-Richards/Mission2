@@ -383,7 +383,9 @@ function updateChampions(lanesInput, names, winRate, kda, gamesPlayed) {
     names.forEach((name) => {
       regexArray.push(
         new RegExp(
-          `${name[0].toLowerCase()}|${name[0].toUpperCase()}${name
+          `${name[0].toLowerCase()}${name
+            .slice(1)
+            .toLowerCase()}|${name[0].toUpperCase()}${name
             .slice(1)
             .toLowerCase()}`
         )
