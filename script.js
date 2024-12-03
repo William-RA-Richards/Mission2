@@ -336,14 +336,6 @@ const supportLane = new Lane(
 const lanes = [topLane, jungleLane, midLane, bottomLane, supportLane];
 let currentLanes = [...lanes];
 
-const img1 =
-  "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2021/12/league-of-legends-firelight-ekko-header.jpg";
-
-const img2 = "https://i.redd.it/70034ibiwnpc1.jpeg";
-
-const img3 =
-  "https://www.lolvvv.com/_next/image?url=https%3A%2F%2Fddragon.leagueoflegends.com%2Fcdn%2Fimg%2Fchampion%2Fsplash%2FEkko_46.jpg&w=1200&q=75";
-
 // Functions
 
 function displayChampions() {
